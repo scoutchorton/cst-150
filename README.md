@@ -1,3 +1,3 @@
 # CST-150
 
-More details coming soon
+C# Programming 1 from Grand Canyon University
