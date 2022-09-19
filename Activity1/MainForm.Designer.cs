@@ -30,35 +30,36 @@
         {
             this.inputDisp = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.numBtn0 = new System.Windows.Forms.Button();
-            this.opBtnDivide = new System.Windows.Forms.Button();
-            this.opBtnEqual = new System.Windows.Forms.Button();
-            this.opBtnPlus = new System.Windows.Forms.Button();
             this.numBtn3 = new System.Windows.Forms.Button();
             this.numBtn2 = new System.Windows.Forms.Button();
             this.numBtn1 = new System.Windows.Forms.Button();
             this.numBtn4 = new System.Windows.Forms.Button();
             this.numBtn5 = new System.Windows.Forms.Button();
             this.numBtn6 = new System.Windows.Forms.Button();
-            this.opBtnMinus = new System.Windows.Forms.Button();
             this.numBtn7 = new System.Windows.Forms.Button();
             this.numBtn8 = new System.Windows.Forms.Button();
             this.numBtn9 = new System.Windows.Forms.Button();
+            this.opBtnPlus = new System.Windows.Forms.Button();
+            this.opBtnMinus = new System.Windows.Forms.Button();
+            this.opBtnDivide = new System.Windows.Forms.Button();
             this.opBtnMultiply = new System.Windows.Forms.Button();
             this.opBtnBack = new System.Windows.Forms.Button();
+            this.opBtnEqual = new System.Windows.Forms.Button();
+            this.numBtn0 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputDisp
             // 
+            this.inputDisp.BackColor = System.Drawing.Color.Olive;
             this.inputDisp.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputDisp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.inputDisp.Location = new System.Drawing.Point(12, 12);
             this.inputDisp.Name = "inputDisp";
             this.inputDisp.ReadOnly = true;
             this.inputDisp.Size = new System.Drawing.Size(120, 26);
             this.inputDisp.TabIndex = 0;
             this.inputDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.inputDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -95,209 +96,255 @@
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // numBtn0
-            // 
-            this.numBtn0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numBtn0.Location = new System.Drawing.Point(33, 93);
-            this.numBtn0.Name = "numBtn0";
-            this.numBtn0.Size = new System.Drawing.Size(24, 24);
-            this.numBtn0.TabIndex = 14;
-            this.numBtn0.Text = "0";
-            this.numBtn0.UseVisualStyleBackColor = true;
-            // 
-            // opBtnDivide
-            // 
-            this.opBtnDivide.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.opBtnDivide.Location = new System.Drawing.Point(93, 93);
-            this.opBtnDivide.Name = "opBtnDivide";
-            this.opBtnDivide.Size = new System.Drawing.Size(24, 24);
-            this.opBtnDivide.TabIndex = 13;
-            this.opBtnDivide.Text = "/";
-            this.opBtnDivide.UseVisualStyleBackColor = true;
-            // 
-            // opBtnEqual
-            // 
-            this.opBtnEqual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.opBtnEqual.Location = new System.Drawing.Point(63, 93);
-            this.opBtnEqual.Name = "opBtnEqual";
-            this.opBtnEqual.Size = new System.Drawing.Size(24, 24);
-            this.opBtnEqual.TabIndex = 12;
-            this.opBtnEqual.Text = "=";
-            this.opBtnEqual.UseVisualStyleBackColor = true;
-            // 
-            // opBtnPlus
-            // 
-            this.opBtnPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.opBtnPlus.Location = new System.Drawing.Point(93, 3);
-            this.opBtnPlus.Name = "opBtnPlus";
-            this.opBtnPlus.Size = new System.Drawing.Size(24, 24);
-            this.opBtnPlus.TabIndex = 3;
-            this.opBtnPlus.Text = "+";
-            this.opBtnPlus.UseVisualStyleBackColor = true;
-            // 
             // numBtn3
             // 
             this.numBtn3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn3.Location = new System.Drawing.Point(63, 3);
             this.numBtn3.Name = "numBtn3";
             this.numBtn3.Size = new System.Drawing.Size(24, 24);
             this.numBtn3.TabIndex = 2;
             this.numBtn3.Text = "3";
-            this.numBtn3.UseVisualStyleBackColor = true;
-            this.numBtn3.Click += new System.EventHandler(this.button3_Click);
+            this.numBtn3.UseVisualStyleBackColor = false;
+            this.numBtn3.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn2
             // 
             this.numBtn2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn2.Location = new System.Drawing.Point(33, 3);
             this.numBtn2.Name = "numBtn2";
             this.numBtn2.Size = new System.Drawing.Size(24, 24);
             this.numBtn2.TabIndex = 1;
             this.numBtn2.Text = "2";
-            this.numBtn2.UseVisualStyleBackColor = true;
-            this.numBtn2.Click += new System.EventHandler(this.button2_Click);
+            this.numBtn2.UseVisualStyleBackColor = false;
+            this.numBtn2.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn1
             // 
             this.numBtn1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn1.Location = new System.Drawing.Point(3, 3);
             this.numBtn1.Name = "numBtn1";
             this.numBtn1.Size = new System.Drawing.Size(24, 24);
             this.numBtn1.TabIndex = 0;
             this.numBtn1.Text = "1";
-            this.numBtn1.UseVisualStyleBackColor = true;
-            this.numBtn1.Click += new System.EventHandler(this.button1_Click);
+            this.numBtn1.UseVisualStyleBackColor = false;
+            this.numBtn1.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn4
             // 
             this.numBtn4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn4.Location = new System.Drawing.Point(3, 33);
             this.numBtn4.Name = "numBtn4";
             this.numBtn4.Size = new System.Drawing.Size(24, 24);
             this.numBtn4.TabIndex = 5;
             this.numBtn4.Text = "4";
-            this.numBtn4.UseVisualStyleBackColor = true;
+            this.numBtn4.UseVisualStyleBackColor = false;
+            this.numBtn4.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn5
             // 
             this.numBtn5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn5.Location = new System.Drawing.Point(33, 33);
             this.numBtn5.Name = "numBtn5";
             this.numBtn5.Size = new System.Drawing.Size(24, 24);
             this.numBtn5.TabIndex = 4;
             this.numBtn5.Text = "5";
-            this.numBtn5.UseVisualStyleBackColor = true;
+            this.numBtn5.UseVisualStyleBackColor = false;
+            this.numBtn5.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn6
             // 
             this.numBtn6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn6.Location = new System.Drawing.Point(63, 33);
             this.numBtn6.Name = "numBtn6";
             this.numBtn6.Size = new System.Drawing.Size(24, 24);
             this.numBtn6.TabIndex = 7;
             this.numBtn6.Text = "6";
-            this.numBtn6.UseVisualStyleBackColor = true;
-            // 
-            // opBtnMinus
-            // 
-            this.opBtnMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.opBtnMinus.Location = new System.Drawing.Point(93, 33);
-            this.opBtnMinus.Name = "opBtnMinus";
-            this.opBtnMinus.Size = new System.Drawing.Size(24, 24);
-            this.opBtnMinus.TabIndex = 6;
-            this.opBtnMinus.Text = "-";
-            this.opBtnMinus.UseVisualStyleBackColor = true;
+            this.numBtn6.UseVisualStyleBackColor = false;
+            this.numBtn6.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn7
             // 
             this.numBtn7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn7.Location = new System.Drawing.Point(3, 63);
             this.numBtn7.Name = "numBtn7";
             this.numBtn7.Size = new System.Drawing.Size(24, 24);
             this.numBtn7.TabIndex = 8;
             this.numBtn7.Text = "7";
-            this.numBtn7.UseVisualStyleBackColor = true;
-            this.numBtn7.Click += new System.EventHandler(this.button9_Click);
+            this.numBtn7.UseVisualStyleBackColor = false;
+            this.numBtn7.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn8
             // 
             this.numBtn8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn8.Location = new System.Drawing.Point(33, 63);
             this.numBtn8.Name = "numBtn8";
             this.numBtn8.Size = new System.Drawing.Size(24, 24);
             this.numBtn8.TabIndex = 9;
             this.numBtn8.Text = "8";
-            this.numBtn8.UseVisualStyleBackColor = true;
+            this.numBtn8.UseVisualStyleBackColor = false;
+            this.numBtn8.Click += new System.EventHandler(this.numberButton_click);
             // 
             // numBtn9
             // 
             this.numBtn9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBtn9.Location = new System.Drawing.Point(63, 63);
             this.numBtn9.Name = "numBtn9";
             this.numBtn9.Size = new System.Drawing.Size(24, 24);
             this.numBtn9.TabIndex = 10;
             this.numBtn9.Text = "9";
-            this.numBtn9.UseVisualStyleBackColor = true;
+            this.numBtn9.UseVisualStyleBackColor = false;
+            this.numBtn9.Click += new System.EventHandler(this.numberButton_click);
+            // 
+            // opBtnPlus
+            // 
+            this.opBtnPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opBtnPlus.Location = new System.Drawing.Point(93, 3);
+            this.opBtnPlus.Name = "opBtnPlus";
+            this.opBtnPlus.Size = new System.Drawing.Size(24, 24);
+            this.opBtnPlus.TabIndex = 3;
+            this.opBtnPlus.Text = "+";
+            this.opBtnPlus.UseVisualStyleBackColor = false;
+            this.opBtnPlus.Click += new System.EventHandler(this.operatorButton_click);
+            // 
+            // opBtnMinus
+            // 
+            this.opBtnMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnMinus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opBtnMinus.Location = new System.Drawing.Point(93, 33);
+            this.opBtnMinus.Name = "opBtnMinus";
+            this.opBtnMinus.Size = new System.Drawing.Size(24, 24);
+            this.opBtnMinus.TabIndex = 6;
+            this.opBtnMinus.Text = "-";
+            this.opBtnMinus.UseVisualStyleBackColor = false;
+            this.opBtnMinus.Click += new System.EventHandler(this.operatorButton_click);
+            // 
+            // opBtnDivide
+            // 
+            this.opBtnDivide.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnDivide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opBtnDivide.Location = new System.Drawing.Point(93, 93);
+            this.opBtnDivide.Name = "opBtnDivide";
+            this.opBtnDivide.Size = new System.Drawing.Size(24, 24);
+            this.opBtnDivide.TabIndex = 13;
+            this.opBtnDivide.Text = "/";
+            this.opBtnDivide.UseVisualStyleBackColor = false;
+            this.opBtnDivide.Click += new System.EventHandler(this.operatorButton_click);
             // 
             // opBtnMultiply
             // 
             this.opBtnMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnMultiply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.opBtnMultiply.Location = new System.Drawing.Point(93, 63);
             this.opBtnMultiply.Name = "opBtnMultiply";
             this.opBtnMultiply.Size = new System.Drawing.Size(24, 24);
             this.opBtnMultiply.TabIndex = 11;
             this.opBtnMultiply.Text = "*";
-            this.opBtnMultiply.UseVisualStyleBackColor = true;
+            this.opBtnMultiply.UseVisualStyleBackColor = false;
+            this.opBtnMultiply.Click += new System.EventHandler(this.operatorButton_click);
             // 
             // opBtnBack
             // 
             this.opBtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.opBtnBack.Location = new System.Drawing.Point(3, 93);
             this.opBtnBack.Name = "opBtnBack";
             this.opBtnBack.Size = new System.Drawing.Size(24, 24);
             this.opBtnBack.TabIndex = 16;
             this.opBtnBack.Text = "←";
-            this.opBtnBack.UseVisualStyleBackColor = true;
+            this.opBtnBack.UseVisualStyleBackColor = false;
+            this.opBtnBack.Click += new System.EventHandler(this.operatorButton_click);
+            // 
+            // opBtnEqual
+            // 
+            this.opBtnEqual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.opBtnEqual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.opBtnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opBtnEqual.Location = new System.Drawing.Point(63, 93);
+            this.opBtnEqual.Name = "opBtnEqual";
+            this.opBtnEqual.Size = new System.Drawing.Size(24, 24);
+            this.opBtnEqual.TabIndex = 12;
+            this.opBtnEqual.Text = "=";
+            this.opBtnEqual.UseVisualStyleBackColor = false;
+            this.opBtnEqual.Click += new System.EventHandler(this.operatorButton_click);
+            // 
+            // numBtn0
+            // 
+            this.numBtn0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBtn0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.numBtn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.numBtn0.Location = new System.Drawing.Point(33, 93);
+            this.numBtn0.Name = "numBtn0";
+            this.numBtn0.Size = new System.Drawing.Size(24, 24);
+            this.numBtn0.TabIndex = 14;
+            this.numBtn0.Text = "0";
+            this.numBtn0.UseVisualStyleBackColor = false;
+            this.numBtn0.Click += new System.EventHandler(this.numberButton_click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(144, 174);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.inputDisp);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Text = "Activity 1";
