@@ -40,9 +40,9 @@
             this.feetLabel.AutoSize = true;
             this.feetLabel.Location = new System.Drawing.Point(30, 15);
             this.feetLabel.Name = "feetLabel";
-            this.feetLabel.Size = new System.Drawing.Size(54, 19);
+            this.feetLabel.Size = new System.Drawing.Size(45, 19);
             this.feetLabel.TabIndex = 0;
-            this.feetLabel.Text = "Feet:";
+            this.feetLabel.Text = "Feet";
             this.feetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cubitsLabel
@@ -50,14 +50,14 @@
             this.cubitsLabel.AutoSize = true;
             this.cubitsLabel.Location = new System.Drawing.Point(12, 47);
             this.cubitsLabel.Name = "cubitsLabel";
-            this.cubitsLabel.Size = new System.Drawing.Size(72, 19);
+            this.cubitsLabel.Size = new System.Drawing.Size(63, 19);
             this.cubitsLabel.TabIndex = 1;
-            this.cubitsLabel.Text = "Cubits:";
+            this.cubitsLabel.Text = "Cubits";
             this.cubitsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // feetInput
             // 
-            this.feetInput.Location = new System.Drawing.Point(90, 12);
+            this.feetInput.Location = new System.Drawing.Point(81, 12);
             this.feetInput.Name = "feetInput";
             this.feetInput.Size = new System.Drawing.Size(125, 26);
             this.feetInput.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // cubitsInput
             // 
-            this.cubitsInput.Location = new System.Drawing.Point(90, 44);
+            this.cubitsInput.Location = new System.Drawing.Point(81, 44);
             this.cubitsInput.Name = "cubitsInput";
             this.cubitsInput.Size = new System.Drawing.Size(125, 26);
             this.cubitsInput.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // convertButton
             // 
-            this.convertButton.Location = new System.Drawing.Point(130, 78);
+            this.convertButton.Location = new System.Drawing.Point(121, 78);
             this.convertButton.Margin = new System.Windows.Forms.Padding(5);
             this.convertButton.Name = "convertButton";
             this.convertButton.Size = new System.Drawing.Size(85, 26);
@@ -99,6 +99,7 @@
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "CubitConverter 3000";
             this.ResumeLayout(false);
             this.PerformLayout();

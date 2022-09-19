@@ -13,14 +13,14 @@
 
 ## Screenshots
 
-- An operation entered in
-![An operation entered in](./ss1.png)
+- 10 feet to Hebrew cubits (with proof on right)
+![10 feet to Hebrew cubits (with proof on right)](./ss1.png)
 
-- An error occurred! (Divide by zero)
-![An error occurred! (Divide by zero)](./ss2.png)
+- 3 Hebrew cubits to feet (with proof on right)
+![3 Hebrew cubits to feet (with proof on right)](./ss2.png)
 
-- Valid results from an equation
-![Valid results from an equation](./ss3.png)
+- Random conversion with a big number
+![Random conversion with a big number](./ss3.png)
 
 ## Repositories
 

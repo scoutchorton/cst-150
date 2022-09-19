@@ -7,7 +7,7 @@ C# Programming 1 from Grand Canyon University
 ## Activities
 
 - [Activity 1](./Activity1/)
-- ~~[Activity 2](./Activity2/)~~
+- [Activity 2](./Activity2/)
 - ~~[Activity 3](./Activity3/)~~
 - ~~[Activity 4](./Activity4/)~~
 - ~~[Activity 5](./Activity5/)~~
