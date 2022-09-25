@@ -14,8 +14,24 @@
 
 ## Screenshots
 
-- moo
-![moo](./moo.png)
+**NOTE**: The value is updated when the text box value changes at all. There is an intentional lack of a button for that reason. (Uses the `TextChanged` event of the text box instead of `Click` on a button.)
+
+- Startup state
+![Startup state](./startup.png)
+- No conversion falls through to seconds (not in project specs)
+![No conversion falls through to seconds](./defaultNoConversion.png)
+- Conversion to minutes
+![Conversion to minutes](./minutesConversion.png)
+- Conversion to hours
+![Conversion to hours](./hoursConversion.png)
+- Conversion to days
+![Conversion to days](./daysConversion.png)
+- Removes plurality when the value is exactly 1 (not in project specs)
+![Removes plurality when the value is exactly 1](./removedPlural.png)
+- Also worked with negative time (extra step beyond `value >= 60` for something like minutes) (not in project specs)
+![Also worked with negative time](./negativeTime.png)
+- Unable to parse
+![Unable to parse](./notAValidNumber.png)
 
 ## Repositories
 

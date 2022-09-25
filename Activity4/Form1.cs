@@ -36,16 +36,18 @@ namespace Activity4 {
             // Clear error message
             statusLabel.Text = "Enter seconds";
 
+            // @ref absolute value found here: https://learn.microsoft.com/en-us/dotnet/api/system.math.abs?view=net-6.0
+
             // Calculate value
-            if(value >= 86400) {
+            if(Math.Abs(value) >= 86400) {
                 value = value / 86400;
                 valueOutput.Text = value.ToString();
                 unitOutput.Text = value == 1.0 ? "day" : "days";
-            } else if(value >= 3600) {
+            } else if(Math.Abs(value) >= 3600) {
                 value = value / 3600;
                 valueOutput.Text = value.ToString();
                 unitOutput.Text = value == 1.0 ? "hour" : "hours";
-            } else if(value >= 60) {
+            } else if(Math.Abs(value) >= 60) {
                 value = value / 60;
                 valueOutput.Text = value.ToString();
                 unitOutput.Text = value == 1.0 ? "minute" : "minutes";
