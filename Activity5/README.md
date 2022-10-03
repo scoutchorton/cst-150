@@ -12,4 +12,3 @@ Write a Windows Form Application that uses a file dialog control to allow the us
 Display the above statistics in a text box and write the above statistics to a file; include a screenshot of your program running with successful output.
 
 ## Screenshots
-
