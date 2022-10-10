@@ -2,24 +2,51 @@
 
 namespace Milestone2 {
     namespace MiniTest {
+        /// <summary>
+        /// Error when a test doesn't exist but was expected to exist
+        /// </summary>
         public class TestDoesNotExist : Exception {
             public TestDoesNotExist() : base() { }
             public TestDoesNotExist(string message) : base(message) { }
         }
+        /// <summary>
+        /// Error when a test exists but wasn't expected to exist
+        /// </summary>
         public class TestExists : Exception {
             public TestExists() : base() { }
             public TestExists(string message) : base(message) { }
         }
 
+        /// <summary>
+        /// Test suite
+        /// </summary>
+        /// <typeparam name="T">Non-nullable class to be tested</typeparam>
         public class Test<T> where T : class {
+            /// <summary>
+            /// Name of the test suite to be displayed
+            /// </summary>
             string name;
-            // Name of the test, initialize function, result function
+
+            /// <summary>
+            /// Internal storage for the tests with initializer and testing functions
+            /// </summary>
             Dictionary<string, (Func<T> init, Func<T?, bool>? test)> tests = new Dictionary<string, (Func<T> init, Func<T?, bool>? test)>();
             
+            /// <summary>
+            /// Create a new test suite
+            /// </summary>
+            /// <param name="name">Suite name</param>
             public Test(string name) {
                 this.name = name;
             }
 
+            /// <summary>
+            /// Create a new test with a specific initialization method
+            /// </summary>
+            /// <param name="testName">Name of the test to perform</param>
+            /// <param name="initFunc">Function to initialize the test item</param>
+            /// <returns>Chainable test suite</returns>
+            /// <exception cref="TestExists">Only one instance of a test is allowed to be created</exception>
             public Test<T> it(string testName, Func<T> initFunc) {
                 // Throw error when test was created already
                 if(tests.ContainsKey(testName)) throw new TestExists("Test " + testName + " has been created already.");
@@ -29,6 +56,13 @@ namespace Milestone2 {
 
                 return this;
             }
+            /// <summary>
+            /// Add a custom function for testing an item
+            /// </summary>
+            /// <param name="testName">Name of the test to perform</param>
+            /// <param name="testFunc">Function to test the item, returning true/false for passing/failing the test</param>
+            /// <returns>Chainable test suite</returns>
+            /// <exception cref="TestDoesNotExist">Test must first be create with Test.it()</exception>
             public Test<T> should(string testName, Func<T?, bool> testFunc) {
                 // Throw error when test has not been created
                 if(!tests.ContainsKey(testName)) throw new TestDoesNotExist("Test " + testName + " does not exist yet.");
@@ -41,6 +75,10 @@ namespace Milestone2 {
                 return this;
             }
 
+            /// <summary>
+            /// Run tests with printed output
+            /// </summary>
+            /// <returns>True when all tests pass</returns>
             public bool runTests() {
                 int pass = 0;
                 int fail = 0;

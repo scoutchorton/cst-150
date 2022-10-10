@@ -45,28 +45,78 @@
             this.inStorage = inStorage;
         }
 
-        public void takeItem() {
-            takeItem(1);
+        /// <summary>
+        /// Take a single item from storage
+        /// </summary>
+        public void take() {
+            take(1);
         }
-        public void takeItem(int count) {
+        /// <summary>
+        /// Take an amount items from storage
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="SizeException">When attempting to take items that don't exist</exception>
+        public void take(int count) {
             // Check for amount in storage
-            if(count > inStorage)
-                throw new SizeException();
+            if(count > inStorage || count < 0) throw new SizeException();
 
             // Remove from storage
             inStorage -= count;
         }
 
-        public void returnItem() {
-            returnItem(1);
+        /// <summary>
+        /// Restore a single item to storage
+        /// </summary>
+        public void restore() {
+            restore(1);
         }
-        public void returnItem(int count) {
+        /// <summary>
+        /// Restore an amount of items to storage
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="SizeException">When attempting to add items that there isn't room for</exception>
+        public void restore(int count) {
             // Check if storage is full
-            if(inStorage + count > totalStorage)
-                throw new SizeException();
+            if(inStorage + count > totalStorage || count < 0) throw new SizeException();
 
             // Add back to storage
             inStorage += count;
+        }
+
+        /// <summary>
+        /// Discard a single item
+        /// </summary>
+        public void discard() {
+            discard(1);
+        }
+        /// <summary>
+        /// Discard an amount of taken out items completely
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="SizeException">When attempting to take items that don't exist</exception>
+        public void discard(int count) {
+            // Check for amount in storage
+            if(count > totalStorage || count > (totalStorage - inStorage) || count < 0) throw new SizeException();
+
+            // Remove from storage
+            totalStorage -= count;
+        }
+
+        /// <summary>
+        /// Stock a single item
+        /// </summary>
+        public void stock() {
+            stock(1);
+        }
+        /// <summary>
+        /// Stock an amount of items, but don't put into storage yet (recieved in mail but not processed)
+        /// </summary>
+        /// <param name="count"></param>
+        public void stock(int count) {
+            if(count < 0) throw new SizeException();
+
+            // Increment the stocked amount of items
+            totalStorage += count;
         }
     }
 }
