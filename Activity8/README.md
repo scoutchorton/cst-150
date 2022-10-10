@@ -22,17 +22,25 @@
 
 ## Screenshots
 
-- Testing 3 (1-10 range)
+- Initial state of the GUI
 
-  ![Testing 3](./screenshots/testing_number_3.png)
+  ![Initial state of the GUI](./screenshots/initialState.png)
 
-- Testing 123 (100-300 range)
+- Invalid values (ignores specific input value)
 
-  ![Testing 123](./screenshots/testing_number_123.png)
+  ![Invalid values](./screenshots/invalidValues.png)
 
-- Testing 1234 (1000-3000 range)
+- Carbohydrate conversion working
 
-  ![Testing 1234](./screenshots/testing_number_1234.png)
+  ![Carbohydrate conversion working](./screenshots/carbsTest.png)
+
+- Fat conversion working
+
+  ![Fat conversion working](./screenshots/fatTest.png)
+
+- Combined conversion working
+
+  ![Combined conversion working](./screenshots/bothTest.png)
 
 ## Repositories
 

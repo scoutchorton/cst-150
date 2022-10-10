@@ -68,6 +68,7 @@
             this.fatGrams.Name = "fatGrams";
             this.fatGrams.Size = new System.Drawing.Size(282, 30);
             this.fatGrams.TabIndex = 5;
+            this.fatGrams.TextChanged += new System.EventHandler(this.handleUserInput);
             // 
             // label3
             // 
@@ -124,6 +125,7 @@
             this.carbGrams.Name = "carbGrams";
             this.carbGrams.Size = new System.Drawing.Size(282, 30);
             this.carbGrams.TabIndex = 4;
+            this.carbGrams.TextChanged += new System.EventHandler(this.handleUserInput);
             // 
             // tableLayoutPanel2
             // 
