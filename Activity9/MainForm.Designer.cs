@@ -1,5 +1,5 @@
 ﻿namespace Activity9 {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -23,10 +23,20 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Name = "MainForm";
+            this.ShowIcon = false;
+            this.Text = "Main";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
