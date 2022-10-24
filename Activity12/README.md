@@ -10,9 +10,13 @@
 
 ## Screenshots
 
-- Successful output with conversions/examples listed
+- Output from Bacon Lorem Ipsum data
 
-  ![Successful output with conversions/examples listed](./screenshots/conversionOutput.png)
+  ![Output from Bacon Lorem Ipsum data](./screenshots/baconIpsum.png)
+
+- Output from assignment test data
+
+  ![Output from assignment test data](./screenshots/test.png)
 
 ## Repositories
 

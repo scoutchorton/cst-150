@@ -15,6 +15,7 @@
             }
 
             // Hand control over to parsing function
+            Console.WriteLine("Processing file " + Path.GetFullPath(filename));
             parseFile(filename);
 
             return 0;
