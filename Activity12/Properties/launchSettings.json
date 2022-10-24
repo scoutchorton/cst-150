@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Activity12": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\data\\baconIpsum.txt"
+    }
+  }
+}
