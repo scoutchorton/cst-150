@@ -1,8 +1,9 @@
 namespace Activity13 {
     enum WinState {
-        NO_WIN,
-        USER_WIN,
-        COMP_WIN
+        NONE,
+        USER,
+        COMP,
+        DRAW
     }
 
     enum Marker {
@@ -31,6 +32,13 @@ namespace Activity13 {
         public MainForm() {
             InitializeComponent();
 
+            initGame();
+        }
+
+        /// <summary>
+        /// Set up variables to start a new game
+        /// </summary>
+        private void initGame() {
             // Assign each label to the list in left to right and top to bottom order
             gridLabels = new Label[3][] {
                 new Label[3] { x0y0, x1y0, x2y0 },
@@ -52,6 +60,22 @@ namespace Activity13 {
             // Run computer's turn if needed to kickstart game
             if(!isUserTurn)
                 computerTurn();
+        }
+        /// <summary>
+        /// Handler for new game button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newGame(object sender, EventArgs e) {
+            initGame();
+        }
+        /// <summary>
+        /// Handler for quit game button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void quitGame(object sender, EventArgs e) {
+            Close();
         }
 
         /// <summary>
@@ -84,10 +108,12 @@ namespace Activity13 {
             updateGrid();
             setTurnStatus();
 
-            // Check for win
+            // Check for win and take turn back from player on game resolution
             WinState state = checkWin();
-            if(state != WinState.NO_WIN)
+            if(state != WinState.NONE) {
                 setWinStatus(state);
+                turn();
+            }
         }
         private void userTurn(object sender, EventArgs e) {
             int xIndex = -1;
@@ -133,33 +159,47 @@ namespace Activity13 {
 
             // Check for win or do computer's turn when there is no win
             WinState state = checkWin();
-            if(state != WinState.NO_WIN)
-                setWinStatus(state);
-            else
+            if(state == WinState.NONE)
                 computerTurn();
+            else
+                setWinStatus(state);
         }
         private WinState checkWin() {
             // Iterate rows
             for(int y = 0; y < 3; y++) {
                 Marker[] rowData = gridData[y];
                 if(rowData[0] == rowData[1] && rowData[1] == rowData[2] && rowData[0] != Marker.NULL)
-                    return rowData[0] == Marker.USER ? WinState.USER_WIN : WinState.COMP_WIN;
+                    return rowData[0] == Marker.USER ? WinState.USER : WinState.COMP;
             }
 
             // Iterate columns
             for(int x = 0; x < 3; x++) {
                 if(gridData[0][x] == gridData[1][x] && gridData[1][x] == gridData[2][x] && gridData[0][x] != Marker.NULL)
-                    return gridData[0][x] == Marker.USER ? WinState.USER_WIN : WinState.COMP_WIN;
+                    return gridData[0][x] == Marker.USER ? WinState.USER : WinState.COMP;
             }
 
             // Check diagonals
             if(gridData[0][0] == gridData[1][1] && gridData[1][1] == gridData[2][2] && gridData[0][0] != Marker.NULL)
-                return gridData[0][0] == Marker.USER ? WinState.USER_WIN : WinState.COMP_WIN;
+                return gridData[0][0] == Marker.USER ? WinState.USER : WinState.COMP;
             else if(gridData[2][0] == gridData[1][1] && gridData[1][1] == gridData[0][2] && gridData[0][2] != Marker.NULL)
-                return gridData[0][2] == Marker.USER ? WinState.USER_WIN : WinState.COMP_WIN;
+                return gridData[0][2] == Marker.USER ? WinState.USER : WinState.COMP;
+
+            // Check if there are possible moves
+            bool foundEmpty = false;
+            for(int y = 0; y < 3; y++) {
+                for(int x = 0; x < 3; x++) {
+                    if(gridData[y][x] == Marker.NULL)
+                        foundEmpty = true;
+
+                    if(foundEmpty) break;
+                }
+                if(foundEmpty) break;
+            }
+
+            if(!foundEmpty) return WinState.DRAW;
 
             // Default on no win if nothing was found
-            return WinState.NO_WIN;
+            return WinState.NONE;
         }
 
         /// <summary>
@@ -199,9 +239,12 @@ namespace Activity13 {
         /// </summary>
         /// <param name="state"></param>
         private void setWinStatus(WinState state) {
-            if(state == WinState.NO_WIN) return;
+            if(state == WinState.NONE) return;
 
-            setStatus(String.Format("{0} win{1}!", state == WinState.USER_WIN ? "You" : "Computer", state == WinState.USER_WIN ? "" : "s"));
+            if(state == WinState.DRAW)
+                setStatus("Match ended in a draw.");
+            else
+                setStatus(String.Format("{0} win{1}!", state == WinState.USER ? "You" : "Computer", state == WinState.USER ? "" : "s"));
         }
     }
 }
