@@ -76,6 +76,7 @@
             this.x0y0.TabIndex = 2;
             this.x0y0.Text = "x0y0";
             this.x0y0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x0y0.Click += new System.EventHandler(this.userTurn);
             // 
             // x1y0
             // 
@@ -88,6 +89,7 @@
             this.x1y0.TabIndex = 3;
             this.x1y0.Text = "x1y0";
             this.x1y0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x1y0.Click += new System.EventHandler(this.userTurn);
             // 
             // x2y0
             // 
@@ -100,6 +102,7 @@
             this.x2y0.TabIndex = 4;
             this.x2y0.Text = "x2y0";
             this.x2y0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x2y0.Click += new System.EventHandler(this.userTurn);
             // 
             // x0y1
             // 
@@ -112,6 +115,7 @@
             this.x0y1.TabIndex = 5;
             this.x0y1.Text = "label5";
             this.x0y1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x0y1.Click += new System.EventHandler(this.userTurn);
             // 
             // x1y1
             // 
@@ -124,6 +128,7 @@
             this.x1y1.TabIndex = 6;
             this.x1y1.Text = "label6";
             this.x1y1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x1y1.Click += new System.EventHandler(this.userTurn);
             // 
             // x2y1
             // 
@@ -136,6 +141,7 @@
             this.x2y1.TabIndex = 7;
             this.x2y1.Text = "label7";
             this.x2y1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x2y1.Click += new System.EventHandler(this.userTurn);
             // 
             // x0y2
             // 
@@ -148,6 +154,7 @@
             this.x0y2.TabIndex = 8;
             this.x0y2.Text = "label8";
             this.x0y2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x0y2.Click += new System.EventHandler(this.userTurn);
             // 
             // x1y2
             // 
@@ -160,6 +167,7 @@
             this.x1y2.TabIndex = 9;
             this.x1y2.Text = "label9";
             this.x1y2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x1y2.Click += new System.EventHandler(this.userTurn);
             // 
             // x2y2
             // 
@@ -172,6 +180,7 @@
             this.x2y2.TabIndex = 10;
             this.x2y2.Text = "label10";
             this.x2y2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.x2y2.Click += new System.EventHandler(this.userTurn);
             // 
             // status
             // 
