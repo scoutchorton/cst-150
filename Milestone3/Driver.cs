@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Milestone2 {
+namespace Milestone3 {
     class Driver {
         /// <summary>
         /// Show the information about an InventoryItem in an organized fashion

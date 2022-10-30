@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Milestone2 {
+namespace Milestone3 {
     namespace MiniTest {
         /// <summary>
         /// Error when a test doesn't exist but was expected to exist

@@ -1,9 +1,9 @@
-﻿namespace Milestone2 {
+﻿namespace Milestone3 {
     class SizeException : Exception {
         public SizeException() : base("Invalid size.") {}
     }
 
-    class InventoryItem {
+    public class InventoryItem {
         public string name;
         public string size;
         public string type;
