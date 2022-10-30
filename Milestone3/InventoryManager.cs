@@ -9,6 +9,7 @@
 
     public class InventoryManager {
         private List<InventoryItem> items = new List<InventoryItem>();
+        public int Count { get { return items.Count; } }
 
         public InventoryManager() { }
 
@@ -38,7 +39,7 @@
         /// </summary>
         /// <param name="item"></param>
         /// <param name="amount"></param>
-        /// <returns></returns>
+        /// <returns>New total amount after adding stock</returns>
         public int restock(InventoryItem item, int amount) {
             int index = items.IndexOf(item);
 

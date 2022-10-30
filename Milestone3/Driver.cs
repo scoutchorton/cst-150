@@ -3,166 +3,103 @@
 namespace Milestone3 {
     class Driver {
         /// <summary>
-        /// Show the information about an InventoryItem in an organized fashion
-        /// </summary>
-        /// <param name="item">Item to display</param>
-        private static void printItem(InventoryItem item) {
-            Console.WriteLine(String.Format("{0} ({1}, {2})", item.name, item.brand, item.model));
-            Console.WriteLine(String.Format("{0} {1} @ {2} {3}", item.type, item.size, item.length, item.lengthUnit));
-            Console.WriteLine(String.Format("     Used: {0}", item.inStorage));
-            Console.WriteLine(String.Format("Available: {0}", item.totalStorage - item.inStorage));
-            Console.WriteLine(String.Format("    Total: {0} {1}%", item.totalStorage, ((float)item.inStorage / (float)item.totalStorage) * 100));
-        }
-
-        /// <summary>
         /// Command line execution of tests
         /// </summary>
         /// <param name="args">CLI arguments</param>
         /// <returns>CLI exit status</returns>
         public static int Main(String[] args) {
-            // Show details about item being tested
-            var item = new InventoryItem(
-                "Audio Cable",
-                "Standard",
-                "XLR",
-                10.0f,
-                "feet",
-                "unknown",
-                "unknown",
-                10,
-                20
-            );
-            printItem(item);
-            Console.WriteLine();
+            // Prepare items to add to the inventory
+            InventoryItem guitarCables = new InventoryItem("Guitar cables", "regular", "1/4", 6.0f, "feet", "unknown", "unknown", 3, 10);
+            InventoryItem HDMICables = new InventoryItem("HDMI cables", "regular", "HDMI", 10.0f, "feet", "unknown", "unknown", 1, 6);
+            InventoryItem VGACables = new InventoryItem("VGA cables", "regular", "VGA", 2.0f, "feet", "unknown", "unknown", 4, 4);
 
             // Prepare test suite
-            var inventoryItemTest = new MiniTest.Test<InventoryItem>("Inventory Item");
+            var inventoryItemTest = new MiniTest.Test<InventoryManager>("Inventory Manager");
 
             // Have consistent item to check
-            Func<InventoryItem> initItem = () => {
-                return new InventoryItem(
-                    "Audio Cable",
-                    "Standard",
-                    "XLR",
-                    5.0f,
-                    "feet",
-                    "unknown",
-                    "unknown",
-                    10,
-                    20
-                );
+            Func<InventoryManager> initItem = () => {
+                InventoryManager im = new InventoryManager();
+                im.add(guitarCables);
+                im.add(HDMICables);
+                return im;
             };
 
             // Initialize tests
             inventoryItemTest
                 .it("initializes", initItem)
-                .it("has correct properties", initItem)
-                .it("can take 3 items", initItem)
-                .it("can't take 13 items", initItem)
-                .it("can return 3 items", initItem)
-                .it("can't return 13 items", initItem)
-                .it("can discard 3 items", initItem)
-                .it("can't discard 13 items", initItem)
-                .it("can stock 3 items", initItem)
-                .it("can't take negative items", initItem)
+                .it("displays", initItem)
+
+                .it("should add new item", initItem)
+                .it("shouldn't add existing item", initItem)
+                
+                .it("can remove existing item", initItem)
+                .it("can't remove non-existant item", initItem)
+                
+                .it("can restock an item", initItem)
+                .it("can't restock a non-existant item", initItem)
+                .it("can't restock 0 items", initItem)
+                .it("can't restock negative items", initItem)
+
+                .it("can find an eixsting item", initItem)
+                .it("can't find a non-eixstant item", initItem)
+                .it("can't find an eixsting item but with wrong criteria", initItem)
                 ;
             
             // Add test requirements
             inventoryItemTest
-                .should("initializes", (item) => {
+                .should("initializes", (im) => {
+                    return im != null;
+                })
+                .should("displays", (im) => {
+                    return true; // No good way to check for this other than somehow reading stdout
+                })
+
+                .should("should add new item", (im) => {
+                    int index = im.add(VGACables);
+                    return index > -1;
+                })
+                .should("shouldn't add existing item", (im) => {
+                    int index = im.add(HDMICables);
+                    return index == -1;
+                })
+
+                .should("can remove existing item", (im) => {
+                    bool status = im.remove(guitarCables);
+                    return status == true;
+                })
+                .should("can't remove non-existant item", (im) => {
+                    bool status = im.remove(VGACables);
+                    return status == false;
+                })
+
+                .should("can restock an item", (im) => {
+                    int newStock = im.restock(guitarCables, 5);
+                    return newStock > 5;
+                })
+                .should("can't restock a non-existant item", (im) => {
+                    int newStock = im.restock(VGACables, 2);
+                    return newStock == -1;
+                })
+                .should("can't restock 0 items", (im) => {
+                    int newStock = im.restock(HDMICables, 0);
+                    return newStock == -1;
+                })
+                .should("can't restock negative items", (im) => {
+                    int newStock = im.restock(guitarCables, -3);
+                    return newStock == -1;
+                })
+
+                .should("can find an eixsting item", (im) => {
+                    InventoryItem? item = im.search("HDMI cables", SearchType.NAME);
                     return item != null;
                 })
-                .should("has correct properties", (item) => {
-                    if(item!.name != "Audio Cable") return false;
-                    else if(item!.size != "Standard") return false;
-                    else if(item!.type != "XLR") return false;
-                    else if(item!.length != 5.0f) return false;
-                    else if(item!.lengthUnit != "feet") return false;
-                    else if(item!.brand != "unknown") return false;
-                    else if(item!.model != "unknown") return false;
-                    else if(item!.inStorage != 10) return false;
-                    else if(item!.totalStorage != 20) return false;
-
-                    return true;
+                .should("can't find a non-eixstant item", (im) => {
+                    InventoryItem? item = im.search("VGA cables", SearchType.NAME);
+                    return item == null;
                 })
-
-                
-                .should("can take 3 items", (item) => {
-                    try {
-                        item!.take(3);
-                    } catch {
-                        return false;
-                    }
-
-                    return item!.inStorage == 7;
-                })
-                .should("can't take 13 items", (item) => {
-                    try {
-                        item!.take(13);
-                    } catch {
-                        return true;
-                    }
-
-                    return false;
-                })
-                
-                .should("can return 3 items", (item) => {
-                    try {
-                        item!.restore(3);
-                    } catch {
-                        return false;
-                    }
-
-                    return item!.inStorage == 13;
-                })
-                .should("can't return 13 items", (item) => {
-                    try {
-                        item!.restore(13);
-                    } catch {
-                        return true;
-                    }
-
-                    return false;
-                })
-
-                .should("can discard 3 items", (item) => {
-                    try {
-                        item!.discard(3);
-                    } catch {
-                        return false;
-                    }
-
-                    return item!.totalStorage == 17;
-                })
-                .should("can't discard 13 items", (item) => {
-                    try {
-                        item!.discard(13);
-                    } catch {
-                        return true;
-                    }
-
-                    return false;
-                })
-
-                .should("can stock 3 items", (item) => {
-                    try {
-                        item!.stock(3);
-                    } catch {
-                        return false;
-                    }
-
-                    return item!.totalStorage == 23;
-                })
-
-
-                .should("can't take negative items", (item) => {
-                    try {
-                        item!.take(-2);
-                    } catch {
-                        return true;
-                    }
-
-                    return false;
+                .should("can't find an eixsting item but with wrong criteria", (im) => {
+                    InventoryItem? item = im.search("Guitar cables", SearchType.MODEL);
+                    return item == null;
                 })
                 ;
 
