@@ -8,12 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Activity15
-{
-    public partial class numberDisplay : Form
-    {
-        public numberDisplay()
-        {
+namespace Activity15 {
+    public partial class numberDisplay : Form {
+        public numberDisplay() {
             InitializeComponent();
         }
     }
